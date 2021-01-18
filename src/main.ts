@@ -1,4 +1,6 @@
 import { NestFactory } from '@nestjs/core'
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
+
 import * as config from 'config'
 
 import { AppModule } from './app.module'
@@ -6,7 +8,7 @@ import { AppModule } from './app.module'
 const SERVER = config.get('server')
 
 async function bootstrap() {
-  const app: any = await NestFactory.create(AppModule)
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
 
   app.enableCors()
 
