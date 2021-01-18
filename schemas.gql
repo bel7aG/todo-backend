@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+interface AbstractTodo {
+  id: ID!
+  title: String!
+  description: String!
+  status: Status!
+}
+
+type Mutation {
+  createTodo(input: TodoInput!): TodoType!
+  updateStatus(status: String!, id: String!): TodoType!
+}
+
+type Query {
+  todos: [TodoType!]!
+}
+
+enum Status {
+  TODO
+  DONE
+}
+
+input TodoInput {
+  title: String!
+  status: Status
+  description: String!
+}
+
+type TodoType implements AbstractTodo {
+  id: ID!
+  title: String!
+  description: String!
+  status: Status!
+}
