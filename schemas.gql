@@ -11,6 +11,7 @@ interface AbstractTodo {
 
 type Mutation {
   createTodo(input: TodoInput!): TodoType!
+  updateStatus(status: String!, id: String!): TodoType!
 }
 
 type Query {
