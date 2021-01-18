@@ -9,7 +9,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "deploy:dev": "rm -rf .build/ && sls deploy",
-    "develop": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
+    "develop": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/src/main.js\"",
     "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
     "prestart:prod": "yarn tsc",
     "deploy": "env NODE_ENV=production node ./dist/src/main.js",
